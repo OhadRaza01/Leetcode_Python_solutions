@@ -6,10 +6,7 @@ def isPalindrome(x):
             last_digit = x % 10
             reverse = reverse * 10 + last_digit
             x //= 10
-        if original_number == reverse:
-            return True
-        else:
-            return False
+        return original_number == reverse
 
 print(isPalindrome(121))
 print(isPalindrome(122))

@@ -11,4 +11,4 @@ def longestcommonprefix(strs):
         
     return first[:i]
 
-print(longestcommonprefix(["ohad" , "ohid" , "ohed" , "hello"]))
+print(longestcommonprefix(["ohad" , "ohid" , "ohed"]))
