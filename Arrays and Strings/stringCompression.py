@@ -1,24 +1,22 @@
+chars = ["a", "a", "b", "b", "c", "c", "c"]
 
-       
-       
-chars = ["a" , "a" , "b" , "b" , "c" , "c" , "c"]
-        
-prev = ""
-current = ""
-count = 1
-chrr = []
-for i in range(1 , len(chars)):
-    prev += chars[i-1]
-    current += chars[i]
-
-    if prev == current:
+writer, reader = 0, 0
+while reader < len(chars):
+		
+    chars[writer] = chars[reader]
+    count = 1
+			
+    while reader + 1 < len(chars) and chars[reader] == chars[reader+1]:
+        reader += 1
         count += 1
-        prev = ""
-        current = ""
-    else:
-        chrr.append(prev)
-        chrr.append(count)
-        count = 0 
-        prev = current
+			
+    if count > 1:
+        for c in str(count):
+            chars[writer+1] = c
+            writer += 1
+            
+    reader += 1
+    writer += 1
 
-print(chrr)
+print(writer)
+print(chars)
